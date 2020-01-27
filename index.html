@@ -1,0 +1,1600 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CIOOS Metadata Profile</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+        <script type="text/javascript" src="js/jquery.simple-tooltip.js"></script>
+        <script type="text/javascript" src="js/show-hide-fields.js"></script>
+        <script type="text/javascript" src="js/character-codes.js"></script>
+        <link rel="stylesheet" href="assets/css/reset.css" type="text/css" media="all">
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,700,700i&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="cioos">
+                    <img src="assets/images/cioos.png" />
+                    <h1>CIOOS Metadata Profile</h1>
+                    <h4 class="version"><a href="https://docs.google.com/spreadsheets/d/1NiVJQutKS4nLZcC6kLBdlwfvOP-YbNtOs69LrHVBj34/">Version 1</a></h4>
+                </div>
+                <div>
+                    <div class="legend">
+                        <h3>Legend</h3>
+                        <div class="legend--container">
+                            <div><strong>Name:</strong> The name for the ISO 19115 element</div>
+                            <div><strong>Compliance:</strong> Note on whether the field is needed in order to complete the CIOOS metatdata record</div>
+                            <div class="legend--compliance">
+                                <div class="compliance-label"><strong>MC:</strong> Mandatory for CIOOS</div>
+                                <div class="compliance-label"><strong>M:</strong> Mandatory for CIOOS and ISO 19115:2014</div>
+                                <div class="compliance-label"><strong>R:</strong> Recommended for CIOOS</div>
+                                <div class="compliance-label"><strong>O:</strong> Optional for CIOOS</div>
+                            </div>
+                                <div><strong>Data Type:</strong> Specification/classification of the type of data</div>
+                                <div><strong>Domain:</strong> Specifies the values that are allowed</div>
+                                <div class="field-container"><span class="field"></span><strong></strong> Requires a field input from a data provider</div>
+                                <div class="field-container"><span class="notice"></span><strong></strong> Field leads to a class which is not defined in CIOOS profile</div>
+                                <div class="field-container"><span class="info"></span><strong></strong> Hover over element to reveal notes regarding element</div>
+                        </div>
+                    </div>
+                    <button id="show-mandatory">Show only mandatory fields</button>
+                </div>
+            </header>
+            <div class="grid">
+                <!-- MI Metatdata -->
+                <div>
+                    <h2>MI_Metadata</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Unique identifier for the metadata record">metadataIdentifier</a><span class="info"></span></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>MD_Identifier</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>code<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">defaultLocale</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>PT_Locale</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the locale language">language</span><span class="field"></span><span class="info"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="languageCode_open">LanguageCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the specific country of the local language">country</span><span class="field"></span><span class="info"></span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div><a class="countryCode_open">CountryCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the character set to be used to encode the textual value of the locale">characterEncoding</span><span class="field"></span><span class="info"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="characterSetCode_open">MD_CharacterSetCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div class="incomplete-field"><span class="notice"></span>parentMetadata</div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Party responsible for the metadata information">contact</a></div>
+                            <div>M</div>
+                            <div>Class</div>
+                            <div>CI_Responsibility</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>role<span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="roleCode_open">CI_RoleCode</a></div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>party</div>
+                                <div>M</div>
+                                <div>Association</div>
+                                <div>CI_Party</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="If federal department or agency, confirm to title defined by HNAP">name</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div>contactInfo</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Contact</div>
+                            </div>
+                            <div class="line-item level-3 item-domain">
+                                <div>address</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Address</div>
+                            </div>
+                            <div class="line-item level-4">
+                                <div>country<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-4">
+                                <div>electronicMailAddress<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Dates associated with the metadata (creation date must be provided, others are optional)">dateInfo</a></div>
+                            <div>M</div>
+                            <div>Class</div>
+                            <div>CI_Date</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="YYYY-MM-DDZ or YYYY-MM-DDThh:mm:ssZ (Z indicates UTC time)">date</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>DateTime</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Creation (mandatory for MD_Metadata, but optional to include other dateTypes)">dateType</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CodeList</div>
+                                <div><a class="dateTypeCode_open">CI_DateTypeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class recommended">
+                        <div class="parent-item">
+                            <div><a class="expand">metadataStandard</a></div>
+                            <div>R</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="ISO 19115-1 Geographic information - Metadata">title</span> <span class="line-item--small-text">(ISO 19115-1)</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="First Edition 2014-04-01">edition</span> <span class="line-item--small-text">(ISO 19115-1)</span><span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="ISO 19115-2 Geographic information - Metadata">title</span> <span class="line-item--small-text">(ISO 19115-2)</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Second Edition 2019-01">edition</span> <span class="line-item--small-text">(ISO 19115-2)</span><span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><a class="expand">metadataProfile</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Canadian Integrated Ocean Observing System Metadata Profile of ISO 19115">title</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>date</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Date</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="2019-11-06Z">date</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>DateTime</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="publication">dateType<span class="field"></span></div>
+                                <div>M</div>
+                                <div>CodeList</div>
+                                <div><a class="dateTypeCode_open">CI_DateTypeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">otherLocal</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>PT_Locale</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the locale language">language</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="languageCode_open">LanguageCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the specific country of the local language">country</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div><a class="countryCode_open">CountryCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the character set to be used to encode the textual value of the locale">characterEncoding</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="characterSetCode_open">MD_CharacterSetCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class recommended">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Description of the spatial and temporal reference systems used in the resource">referenceSystemInfo</a></div>
+                            <div>R</div>
+                            <div>Association</div>
+                            <div>MD_ReferenceSystem</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>referenceSystemType<span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div><a class="referenceSytemTypeCode_open">MD_ReferenceSystemTypeCode</a></div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Information about the reference system">referenceSystemIdentifier</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Party responsible for maintenance of namespace">authority<span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>code<span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Identifier or namespace in which the code is valid, see www.epsg.org">codeSpace</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="For codeSpace EPSG, code4326, description = WGS-84">description<span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">identificationInfo</a></div>
+                            <div>M</div>
+                            <div>Association</div>
+                            <div>MD_Identification</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_DataIdentification</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">distributionInfo</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_Distribution</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_Distribution</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">metadataConstraints</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_Constraints</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_Constraints</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">metadataMaintenance</a></div>
+                            <div>M</div>
+                            <div>Association</div>
+                            <div>MD_MaintenanceInformation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_MaintenanceInformation</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class recommended">
+                        <div class="parent-item">
+                            <div><a class="expand">resourceLineage</a></div>
+                            <div>R</div>
+                            <div>Association</div>
+                            <div>LI_Lineage</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>LI_Lineage</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Information about the scope of the resource">metadataScope</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_MetadataScope</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>resourceScope<span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="scopeCode_open">MD_ScopeCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div>name<span class="field"></span></div>
+                                <div>O</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class recommended">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Provides information about acquisition of the data">acquisitionInformation</a></div>
+                            <div>R</div>
+                            <div>Association</div>
+                            <div>MI_AcquisitionInformation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MI_AcquisitionInformation</em></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- MD_DataIdentification -->
+                <div>
+                    <h2>MD_DataIdentification</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">citation</a></div>
+                            <div>M</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Bilingual, where + what + when">title<span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>date</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Date</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="YYYY-MM-DDZ">date<span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>DateTime</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>dateType<span class="field"></span></div>
+                                <div>M</div>
+                                <div>CodeList</div>
+                                <div><a class="dateTypeCode_open">CI_DateTypeCode</a></div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>identifier</div>
+                                <div>R</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Datacite DOI or similar">code</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specific domain</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Note: this should have as many repeats as needed for all roles involved">citedResponsibleParty</span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Responsibility</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>role<span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="roleCode_open">CI_RoleCode</a></div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div>party</div>
+                                <div>M</div>
+                                <div>Association</div>
+                                <div>CI_Party</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Name of person/organization who has to be credited with existance of dataset">name</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Use if datacite DOI exists">onlineResource</span></div>
+                                <div>R</div>
+                                <div>Class</div>
+                                <div>CI_OnlineResource</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span  class="tooltip-definition" title="URL to dataset landing page (must exist if there is a datacite DOI)">linkage</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>name<span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>description<span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>protocolRequest<span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Unspecified domain</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="Bilingual. Provide guidelines on minimum required information (device details, site description, temporal range). Brief narrative summary of the resource">abstract</span><span class="field"></span></div>
+                            <div>M</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="Bilingual. Summary of the intentions with which the resource was developed">purpose</span><span class="field"></span></div>
+                            <div>O</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div>status<span class="field"></span></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div><a class="progressCode_open">MD_ProgressCode</a></div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div>spatialRepresentationType<span class="field"></span></div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div><a class="spatialRepresentationTypeCode_open">MD_SpatialRepresentationTypeCode</a></div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div>topicCategory<span class="field"></span></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div><a class="topicCategoryCode_open">MD_TopicCategoryCode</a></div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">extent</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>EX_Extent</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>EX_Extent</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">resourceMaintenance</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_MaintenanceInformation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_MaintenanceInformation</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Keywords, their type and reference source. HNAP requires at least one and uses http://canada.multites.net/cst/def.asp?lang=En&n=E5807AB0-1">descriptiveKeywords</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_Keywords</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Require: a) CFNames for all variables that support EOVs, since this is how we could propose that the portal filters for EOVs, b) at least one french/english keyword from Government of Canada Core Subject thesaurus (http://canada.multites.net/cst/def.asp?lang=En&n=E5807AB0-1) for compatiblity with HNAP, c) French representation of any EOVs within dataset. Recommend vocabularies for a) devices (NERC L22/L05 vocabularies), b) GCMD key words, c) place names">keyword</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div>thesaurusName</div>
+                                <div>O</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Name of the controlled vocabulary being referenced">title</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Version of the controlled vocabulary being referenced">edition</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-3 item-domain">
+                                <div>date</div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Date</div>
+                            </div>
+                            <div class="line-item level-4">
+                                <div><span class="tooltip-definition" title="YYYY-MM-DDZ. Date resource was last updated">date</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>DateTime</div>
+                            </div>
+                            <div class="line-item level-4">
+                                <div>dateType<span class="field"></span></div>
+                                <div>m</div>
+                                <div>CodeList</div>
+                                <div><a class="dateTypeCode_open">CI_DateTypeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">resourceConstraints</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>MD_Constraints</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div>see <em>MD_Constraints</em></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Language and character set used within the resource (PT_Locale)">defaultLocale</a></div>
+                            <div>M</div>
+                            <div>Class</div>
+                            <div>PT_Locale</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the locale language">language</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="languageCode_open">LanguageCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the specific country of the local language">country</span><span class="field"></span></div>
+                                <div>O</div>
+                                <div>Class</div>
+                                <div><a class="countryCode_open">CountryCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the character set to be used to encode the textual value of the locale">characterEncoding</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="characterSetCode_open">MD_CharacterSetCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Alternate localised languages and characer sets used within the resource (PT_Locale)">otherLocale</a></div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div>PT_Locale</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the locale language">language</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a class="languageCode_open">LanguageCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the specific country of the local language">country</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div><a class="countryCode_open">CountryCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Designation of the character set to be used to encode the textual value of the locale">characterEncoding</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a class="characterSetCode_open">MD_CharacterSetCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- MD_Constraints -->
+                <div>
+                    <h2>MD_Constraints</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="Limitiation affecting the fitness for use of the resource or metadata">useLimitation</span><span class="field"></span></div>
+                            <div>MC</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Citation/link to data policy">reference</a></div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="title of data policy">title</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>onlineResource</div>
+                                <div>mc</div>
+                                <div>Class</div>
+                                <div>CI_OnlineResource</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="link of data policy">linkage</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Text restricted to URL</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item specified-class">
+                            <div><a class="expand">MD_LegalConstraints</a></div>
+                            <div>MC</div>
+                            <div>Specified Class</div>
+                            <div>from MD_Constraints</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="unrestricted">accessConstraints</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div><a class="restrictionCode_open">MD_RestrictionCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div>useConstraints<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div><a class="restrictionCode_open">MD_RestrictionCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Restrictions and legal prerequisites for accessing and using the resource">useLimitation</span><span class="field"></span></div>
+                                <div>O</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Citation for the limitation or constraint">reference</span></div>
+                                <div>O</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                                </div>
+                            <div class="line-item level-2">
+                                <div>title<span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div>onlineResource</div>
+                                <div>mc</div>
+                                <div>Class</div>
+                                <div>CI_OnlineResource</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div>linkage<span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Text restricted to URL</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- MD_Distribution -->
+                <div>
+                    <h2>MD_Distribution</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="Brief description of a set of distribution options">description</span><span class="field"></span></div>
+                            <div>O</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Provides a description of the format of the data to be distributed">distributionFormat</a></div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div>MD_Format</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Citation/URL of the specification for the format">formatSpecificationCitation</span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>title<span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Provides information about the distributor">distributor</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>MD_Distributor</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1 item-domain">
+                                <div>distributorContact</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_Responsibility</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>role<span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="roleCode_open">CI_RoleCode</a></div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div>party</div>
+                                <div>M</div>
+                                <div>Association</div>
+                                <div>CI_Party</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Organization hosting the ERDDAP source">name</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-3 item-domain">
+                                <div>contactInfo</div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>CI_Contact</div>
+                            </div>
+                            <div class="line-item level-4 item-domain">
+                                <div>address</div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>CI_Address</div>
+                            </div>
+                            <div class="line-item level-5">
+                                <div>electronicMailAddress<span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Technical means and media by which a resource is obtained from the distributor">transferOptions</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>MD_DigitalTransferOptions</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Size of data downloaded, expressed as megabytes">transferSize</span><span class="field"></span></div>
+                                <div>R</div>
+                                <div>Real</div>
+                                <div>> 0,0</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div>onLine</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>CI_OnlineResource</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>name<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Character String</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Detailed text description of what the online resource is/does">description</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Character String</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Link to data in ERDDAP, and this should be consistent with CKAN configuration">linkage</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Character String</div>
+                                <div>Text restricted to URL</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="OPeNDAP">protocol</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Character String</div>
+                                <div>No specified domain</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- EX_Extent -->
+                <div>
+                    <h2>EX_Extent</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class recommended">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="Extent of the referring object">description</span><span class="field"></span></div>
+                            <div>R</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class optional">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Spatial area of the resource; Must include at least one of description, geographic extent, temporal extent and vertical extent">geographicElement</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>EX_GeographicExtent</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1 specified-class">
+                                <div><span class="tooltip-definition" title="Enclosing geometric object which locates the resource, expressed as a set of (x,y) coordinate(s). Note 1: if a polygon is used it should be closed (last point replicates first point). Note 2: this type can be used to represent geometries other than polygons, e.g. points, lines">EX_BoundingPolygon</span> <span class="small-text">(use if != EX_GeographicBoundingBox)</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Specified Class</div>
+                                <div>EX_GeographicExtent</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Indication of whether the geographic element encompasses an area covered by the data or an area where data are not present">extentTypeCode</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Boolean</div>
+                                <div>0 = exclusion, 1 = inclusion</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Use decimal degrees. Sets of point defining the bounding polygon or any other GM_Object geometry (point, line, or polygon)">polygon</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>GM_Object</div>
+                            </div>
+                            <div class="line-item level-1 specified-class">
+                                <div><span class="tooltip-definition" title="Spatial component of the extent of the referring object">EX_GeographicBoundingBox</span> <span class="small-text">(use if != EX_BoundingPolygon)</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Specified Class</div>
+                                <div>EX_GeographicExtent</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Indication of whether the geographic element encompasses an area covered by the data or an area where data are not present">extentTypeCode</span><span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Boolean</div>
+                                <div>0 = exclusion, 1 = inclusion</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Western-most coordinate, longitude in decimal degrees (positive east)">westBoundingLongitude</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Decimal</div>
+                                <div>-180,0 <= West Bounding Longitude<br />Value <= 180,0</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Eastern-most coordinate, longitude in decimal degrees (positive east)">eastBoundLongitude</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Decimal</div>
+                                <div>-180,0 <= East Bounding Longitude<br />Value <= 180,0</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Southern-most coordinate, latitude in decimal degrees (positive north)">southBoundLatitude</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Decimal</div>
+                                <div>-90,0 <= South Bounding Latitude Value <= 90,0; South Bounding Latitude Value <= North bounding Latitude Value</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Northern-most coordinate, latitude in decimal degrees (positive north)">northBoundLatitude</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Decimal</div>
+                                <div>-90,0 <= North Bounding Latitude Value <= 90,0; North Bounding Latitude Value >= South Bounding Latitude Value</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Temporal component of the extent of the referring object; Must include at least one of description, geographic extent, temporal extent and vertical extent">temporalElement</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>EX_TemporalExtent</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Period for the content of the resource">extent</span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div>TM_Primitive</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Beginning date or time of the resource contents">beginPosition</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>UTC in ISO 8601: YYY-MM-DD or YYY-MM-DDThh:mm:ssZ</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="The ending date or time of the resource contents">endPosition</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>CharacterString</div>
+                                <div>If known: UTC in ISO 8601: YYY-MM-DD or YYY-MM-DDThh:mm:ssZ; if unknown:  indeterminatePosition="now"</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Provides vertical component of the extent of the referring object. Must include at least one of description, geographic extent, temporal extent and vertical extent">verticalElement</a></div>
+                            <div>MC</div>
+                            <div>Association</div>
+                            <div>EX_VerticalExtent</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Lowest vertical value contained in resource">minimumValue</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Real</div>
+                                <div>Real</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Highest vertical value contained in resource">maximumValue</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Real</div>
+                                <div>Real</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Provides information about the vertical coordinate system">verticalCRS</span><span class="field"></span></div>
+                                <div>O</div>
+                                <div>Class</div>
+                                <div>SC_VerticalCRS <span class="abstract">&lt;&lt;Abstract&gt;&gt;</span></div>
+                            </div><div class="line-item level-1 item-domain">
+                                <div>verticalCRSId</div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div>MD_ReferenceSystem</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>referenceSystemType<span class="field"></span></div>
+                                <div>MC</div>
+                                <div>Class</div>
+                                <div><a class="referenceSytemTypeCode_open">MD_ReferenceSystemTypeCode</a></div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div><span class="tooltip-definition" title="Identifier and code space for reference system">referenceSystemIdentifier</span></div>
+                                <div>O</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="The person or party responsible for maintenance of that namespace">authority</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Alphanumeric value identifying an instance in the namespace. Note: avoid characters that are not legal in URLs, ex. ESPG::4326">code</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Identifier or namespace in which the code is valid">codeSpace</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Natural language description of the meaning of the code value">description</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+               <!-- MD_MaintenanceInformation -->
+                <div>
+                    <h2>MD_MaintenanceInformation</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="The frequency with which changes and additions are made to the resource after the initial resource is completed">maintenanceAndUpdateFrequency</span><span class="field"></span></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div><a class="maintenanceFrequencyCode_open">MD_MaintenanceFrequencyCode</a></div>
+                        </div>
+                    </section>
+               </div>
+
+              <!-- LI_Lineage -->
+                <div class="recommended">
+                    <h2>LI_Lineage</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><span class="tooltip-definition" title="General explanation of the data producer's knowledge about the lineage of a resource">statement</span><span class="field"></span></div>
+                            <div>O</div>
+                            <div>CharacterString</div>
+                            <div>Free text</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Type of resource and/or extent to which the lineage information applies">scope</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>MD_Scope</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Target resource covered">level</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a class="scopeCode_open">MD_ScopeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Resource (ex. a publication that describes the whole process i.e., dataset)">additionalDocumentation</span></div>
+                            <div>O</div>
+                            <div>Class</div>
+                            <div>CI_Citation</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Information about an event or transformation in the life of a resource including the process used to maintain the resource">processStep</a></div>
+                            <div>O</div>
+                            <div>Association</div>
+                            <div>LI_ProcessStep</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Description of the event, including related parameters or tolerances">description</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="requirement or purpose for the process step">rational</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Date, time, range or period of process step">stepDateTime</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>TM_Primitive</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Identification of, and means of communication with, person(s) and organization(s) associated with the process step">processsor</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Responsibility</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Process step documentation">reference</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Information about an event or transformation in the life of the dataset including details of the algorithm and software used for processing (extension of LI_ProcessStep)">processStep</a></div>
+                            <div>O</div>
+                            <div>Association</div>
+                            <div>LE_ProcessStep</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Report of what occurred during the process step">report</span></div>
+                                <div>o</div>
+                                <div>Association</div>
+                                <div>LE_ProcessStepReport</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Resource to be processed">output</span></div>
+                                <div>o</div>
+                                <div>Association</div>
+                                <div>LE_Source</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Type of resource and/or extent to which the process step applies">scope</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_Scope</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>description<span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Reference to metadata for the source">sourceMetadata</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Information about the resource used in creating the resource specified by the scope">source</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>LI_Source</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Detailed description of the source">description</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Spatial resolution expressed as a scale factor, a distance, an angle or a level of detail">sourceSpatialResolution</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_Resolution</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Spatial reference system used by the source">sourceReferenceSystem</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_ReferenceSystem</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Recommended reference to be used by the source">sourceCitation</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Reference to metadata for the source">sourceMetadata</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Type and/or extent of the source">scope</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_Scope</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- MI_AcquisitionInformation -->
+                <div class="recommended">
+                    <h2>MI_AcquisitionInformation</h2>
+                    <section>
+                        <div class="parent-item field-headings">
+                            <div>Name</div>
+                            <div>Compliance</div>
+                            <div>Data Type</div>
+                            <div>Domain</div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="The specific data to which the acquisition information applies ">scope</a></div>
+                            <div>MC</div>
+                            <div>Class</div>
+                            <div>MD_Scope</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="dataset">resourceScope</span><span class="field"></span></div>
+                                <div>M</div>
+                                <div>Class</div>
+                                <div><a class="scopeCode_open">MD_ScopeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Characterisitics of the measuring instrument. Include this resource here under MI_Acquisition information only IF platform>MI_Platform is not being used (e.g., insuficient information known for platform). Otherwise, this resource should be under platform">instrument</a></div>
+                            <div>R</div>
+                            <div>Association</div>
+                            <div>MI_Instrument</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Name of the type of instrument, i.e., framing, line-scan, push-broom, panframe. NERC L22 Controlled Vocabulary term and URL (if mapping exists - if not, request the term through their governance)">type</span><span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="NERC L22 term description (plus any other information at institution discretion such as customizations)">description</span><span class="field"></span></div>
+                                <div>mc</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Unique identification of the instrument">identifier</span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Local identifier or SN">code</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Natural language description of the meaning of the code value ">description</span><span class="field"></span></div>
+                                <div>r</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div><span class="tooltip-definition" title="The person or party responsible for maintenance of that namespace">authority</span></div>
+                                <div>r</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Up to host institution (e.g., manufacturer for SN, institution for PID)">title</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="List of events related to platform/instrument/sensor">history</span></div>
+                                <div>o</div>
+                                <div>Association</div>
+                                <div>MI_InstrumentationEventList</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="From Manual: Description of the language and character set used for the instrument event list. However we agree that this is typo since it is also the same descritpion from the locale field immediately below....">description</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div  class="incomplete-field"><span class="notice"></span>locale<span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>PT_Locale</div>
+                            </div>
+                            <div class="line-item level-2 item-domain">
+                                <div><span class="tooltip-definition" title="An event related to the instrument">instrumentEvent</span></div>
+                                <div>o</div>
+                                <div>Association</div>
+                                <div>MI_InstrumentEvent</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div><span class="tooltip-definition" title="Description of the instrumentEvent">description</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-3">
+                                <div>type<span class="field"></span></div>
+                                <div>m</div>
+                                <div>Codelist</div>
+                                <div><a class="eventTypeCode_open">MI_EventTypeCode</a></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="tooltip-definition expand" title="Designations for the operation used to acquire the dataset">operation</a></div>
+                            <div>O</div>
+                            <div>Association</div>
+                            <div>MI_Operation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Description of the mission on which the platform observations are made and the objectives of that mission">description</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span>identifier</div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div>status<span class="field"></span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a class="progressCode_open">MD_ProgressCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Real (assuming observation data, not model)">type</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div><a class="operationTypeCode_open">MI_OperationTypeCode</a></div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div  class="incomplete-field"><span class="notice"></span>significantEvent</div>
+                                <div>o</div>
+                                <div>Association</div>
+                                <div>MI_Event</div>
+                            </div>
+                            <!--
+                            <div class="line-item level-2">
+                                <div>identifier</div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>trigger</div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a>MI_TriggerCode</a></div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>context</div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a>MI_ContextCode</a></div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>sequence</div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div><a>MI_SequenceCode</a></div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div>time</div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>DateTime</div>
+                            </div>
+                            -->
+                        </div>
+                    </section>
+                    <section class="metadata-class">
+                        <div class="parent-item">
+                            <div><a class="expand">platform (MI_Platform)</a></div>
+                            <div>R</div>
+                            <div>Aggregatted Class</div>
+                            <div>MI_AcquisitionInformation, MI_Operation</div>
+                        </div>
+                        <div class="mc-content">
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Narrative description of the platform supporting the instrument. Recommend using NERC L06 term and description">description</span><span class="field"></span></div>
+                                <div>o</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div class="incomplete-field"><span class="notice"></span><span class="tooltip-definition" title="Organization responsible for building, launch, or operation of the platform. Suggest using rolecode of resourceProvider or originator, but up to institution">sponsor</span></div>
+                                <div>o</div>
+                                <div>Class</div>
+                                <div>CI_Responsibility</div>
+                            </div>
+                            <div class="line-item level-1">
+                                <div><span class="tooltip-definition" title="Characterisitics of the measuring instrument. Include this resource here under MI_Platform IF platform>MI_Platform IS being used. Otherwise, this resource should be under MI_AcquisitionInformation. See above under MI_AcquisitionInformation for how to populate the elements within MI_Instrument">instrument</span></div>
+                                <div>r</div>
+                                <div>Association</div>
+                                <div>MI_Instrument</div>
+                            </div>
+                            <div class="line-item level-1 item-domain">
+                                <div><span class="tooltip-definition" title="Unique identifcation of the platform">identifier</span></div>
+                                <div>m</div>
+                                <div>Class</div>
+                                <div>MD_Identifier</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div class="incomplete-field"><span class="notice"></span>authority</div>
+                                <div>mc</div>
+                                <div>Class</div>
+                                <div>CI_Citation</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="NERC C17 recommended, otherwise institutional choice">code</span><span class="field"></span></div>
+                                <div>m</div>
+                                <div>CharacterString</div>
+                                <div>No specified domain</div>
+                            </div>
+                            <div class="line-item level-2">
+                                <div><span class="tooltip-definition" title="Natural language desription of the meaning of the code value">description</span><span class="field"></span></div>
+                                <div>r</div>
+                                <div>CharacterString</div>
+                                <div>Free text</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div><!-- end .grid -->
+        </div><!-- end .wrapper -->
+
+        <div id="characterSetCode"></div>
+        <div id="roleCode"></div>
+        <div id="dateTypeCode"></div>
+        <div id="referenceSytemTypeCode"></div>
+        <div id="scopeCode"></div>
+        <div id="progressCode"></div>
+        <div id="spatialRepresentationTypeCode"></div>
+        <div id="topicCategoryCode"></div>
+        <div id="restrictionCode"></div>
+        <div id="maintenanceFrequencyCode"></div>
+        <div id="eventTypeCode"></div>
+        <div id="operationTypeCode"></div>
+        <div id="languageCode"></div>
+        <div id="countryCode"></div>
+
+    </body>
