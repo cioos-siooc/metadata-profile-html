@@ -112,10 +112,12 @@ header {
   font-size: 1em;
   font-weight: 700;
   margin: 0.25em 0 4em 2em;
-  color: #42494e;
   font-family: 'Titillium Web', sans-serif;
   font-style: italic;
   color: #0b77c2; }
+  .cioos .version span {
+    font-weight: 400;
+    color: #42494e; }
 
 .field-headings {
   font-weight: 700;
@@ -239,14 +241,15 @@ button {
   border: none;
   background: #0b77c2;
   color: #fff;
-  padding: 0.625em 1.5em;
+  padding: 0.625em 1.25em 0.5em 1.25em;
   border-radius: 0.25em;
   font-weight: 700;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 1.125em; }
+  font-size: 0.75em;
+  text-transform: uppercase; }
   button:hover {
     background: #ef2760; }
 

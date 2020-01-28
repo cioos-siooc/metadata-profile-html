@@ -4,4 +4,8 @@ This is a simple HTML webpage which contains the CIOOS metadata profile based on
 
 ## Modification
 
-This is a Saas project so you'll have to use some editor or processor that converts SCSS into CSS. ALL CSS needs to be written within assets/scss.
+This is a Saas project so you'll have to use some editor or compiler that converts SCSS into CSS. ALL CSS needs to be written within assets/scss.
+
+A few options:
+- Scout-App https://scout-app.io/
+- Prepros https://prepros.io/
