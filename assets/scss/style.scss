@@ -381,3 +381,76 @@ button {
         margin-top: 0.5em;
     }
 }
+
+@media (max-width: 780px) {
+    .parent-item,
+    .line-item {
+        div {
+            &:first-child {
+                width: 50%;
+            }
+            &:nth-child(2) {
+                width: 25%;
+            }
+            &:nth-child(3) {
+                width: 0%;
+                display: none;
+            }
+            &:nth-child(4) {
+                width: 25%;
+            }
+        }
+    }
+    .legend {
+        strong {
+            display: block;
+        }
+        .compliance-label {
+            margin-left: 0;
+            strong {
+                text-align: left;
+                display: inline-block;
+                width: 2em;
+            }
+        }
+        .field-container {;
+            padding-left: 0.75em;
+            .field,
+            .notice {
+                left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+}
+@media (max-width: 640px) {
+    .wrapper {
+        padding: 2em;
+    }
+    .parent-item,
+    .line-item {
+        div {
+            &:first-child {
+                width: 70%;
+            }
+            &:nth-child(2) {
+                width: 30%;
+                text-align: right;
+            }
+            &:nth-child(4) {
+                width: 0%;
+                display: none;
+            }
+        }
+    }
+}
+
+.parent-item,
+.line-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Spacings
+.bottom-1 { margin-bottom: 1em; }
+.bottom-2 { margin-bottom: 2em; }
